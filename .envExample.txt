@@ -1,0 +1,13 @@
+OPEN_AIKEY=sk-your_key_here
+GROQ_KEY=your_key_here
+USERAPI=your_playHT_client_here
+SECRETAPI=your_playHT_secret_here
+CH1Name=[Throwaway321]
+CH1URL="http://localhost:3000/api/v1/prediction/e262f7aa-c7d3-428f-ad6e-2c3daab93dad"
+CH1VOICE=alloy
+CH2Name=[EarthyVibes88]
+CH2VOICE=onyx
+CH2URL="http://localhost:3000/api/v1/prediction/418e3f2f-df5c-4e3b-a3fc-87a124ce8bb1"
+FirstPrompt="Today we will be having a comprehensive discussion about: "
+FirstPromptSpecific = "Why donuts are not well appreciated in the USA"
+StringFormatURL="http://localhost:3000/api/v1/prediction/[CUSTOM_ROUTE_FOR_FLOWISE_ENDPOINT]"

@@ -1,0 +1,16 @@
+/app/.env
+.DS_Store
+.env
+/outPuts
+/functionOutputs
+output.aiff
+speechOutput.mp3
+messagesJSON.json
+output.mp3
+mySongTest.mp3
+sunoMusic.mp3
+/musicOutputs
+/aiPlaylist
+.Rhistory
+/ProjectArchive 
+/userSunoFolder
