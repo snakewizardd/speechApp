@@ -77,6 +77,16 @@ ui <- fluidPage(
       }
     "))
   ),
+  tags$script(
+    type="module",
+    HTML('
+      import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+      Chatbot.init({
+          chatflowid: "cd1f82dc-ae92-484e-b3a0-e7ddeadccc61",
+          apiHost: "http://localhost:3000",
+      })
+    ')
+  ),
   sidebarLayout(
     sidebarPanel(
       actionButton("record", "Record"),
