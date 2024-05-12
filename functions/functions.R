@@ -480,3 +480,69 @@ sxDL <- function(url = "https://api.stability.ai/v2beta/stable-image/generate/sd
 #                     fileName = 'mShabs.jpeg')
 
 #sxDL(prompt = 'a man chilling like a villain',fileName='chilling.jpeg')
+
+
+#Ping the chat completions API endpoint
+pingHebrewBot <- function(userInputMessage
+){
+  
+  url <- "http://localhost:3000/api/v1/prediction/5786bda1-b6da-4c94-a75f-bd9945d6e2ac"
+  
+  body <- list(
+    question = userInputMessage  
+  )
+  
+  response <- POST(
+    url,
+    add_headers(
+      `Content-Type`="application/json"),
+    body = body,
+    encode = "json"
+  )
+  
+  
+  
+  aiResponseFormatted<- list(
+    role = "assistant",
+    content = content(response)
+  )
+  
+  paste0('Objective: ',aiResponseFormatted$content$json$inputObjective,'___',
+         'Answer: ',aiResponseFormatted$content$json$answerOutput,'___',
+         'Explanation: ',aiResponseFormatted$content$json$explanation,'___',
+         'ISO Transliteration: ',aiResponseFormatted$content$json$iso_transliteration)
+  
+  # messages[[length(messages) + 1]] <<- aiResponseFormatted
+  
+  #print(aiResponseFormatted$content)
+}
+
+interpretHebrewBot <- function(hebrewBotReponse){
+  
+  url <- "http://localhost:3000/api/v1/prediction/4c64b952-9e9e-42de-bd0b-4facf82f6a15"
+  
+  body <- list(
+    question = hebrewBotReponse  
+  )
+  
+  response <- POST(
+    url,
+    add_headers(
+      `Content-Type`="application/json"),
+    body = body,
+    encode = "json"
+  )
+  
+  
+  
+  aiResponseFormatted<- list(
+    role = "assistant",
+    content = content(response)$text
+  )
+  
+  #messages[[length(messages) + 1]] <<- aiResponseFormatted
+  
+  print(aiResponseFormatted$content)
+  
+  
+}

@@ -7,7 +7,10 @@ observeEvent(input$sendTranscription,{
   
   addUserMessage(userMessage =userInput)
   
-  storeAPI <- pingAPI(userInputMessage = userInput)
+  #storeAPI <- pingAPI(userInputMessage = userInput)
+  storeAPI <- interpretHebrewBot(hebrewBotReponse =
+                                   pingHebrewBot(userInputMessage = userInput))
+  
   
   aiOutputReactiveValue(storeAPI)
   
