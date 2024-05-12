@@ -47,7 +47,7 @@ ui <- fluidPage(
         font-size: 18px;
       }
       body {
-        background-image: url('https://th.bing.com/th/id/OIP.8dsUmNRShVq6Hi-tUNOTYgHaHa?rs=1&pid=ImgDetMain');
+        background-image: url('https://sdimagesite.neocities.org/c.jpeg');
         background-repeat: repeat;
         background-size: auto;
         background-position: center;
