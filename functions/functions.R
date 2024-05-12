@@ -46,23 +46,23 @@ pingAPI <- function(userInputMessage
                     ){
   
   #url <- "https://api.openai.com/v1/chat/completions"
-  url <- "https://api.groq.com/openai/v1/chat/completions"
-  #url <- "http://localhost:3000/api/v1/prediction/779c8564-0600-4930-9b6c-926a1e658c5a"
+  #url <- "https://api.groq.com/openai/v1/chat/completions"
+  url <- "http://localhost:3000/api/v1/prediction/fea20274-1672-4974-9f1b-c53fd839b9ab"
   
   #apiKey <- importedAPIKey
-  apiKey <-  groqKey
+  #apiKey <-  groqKey
   
   body <- list(
     #model = "gpt-3.5-turbo",
     #model = "llama3-70b-8192",
-    model = "mixtral-8x7b-32768",
-    #question = userInputMessage
-      messages=messages
+    #model = "mixtral-8x7b-32768",
+    question = userInputMessage
+      #messages=messages
   )
   
   response <- POST(
     url,
-    add_headers(`Authorization` = paste("Bearer", apiKey),
+    add_headers(#`Authorization` = paste("Bearer", apiKey),
                 `Content-Type`="application/json"),
     body = body,
     encode = "json"
@@ -72,8 +72,8 @@ pingAPI <- function(userInputMessage
   
   aiResponseFormatted<- list(
     role = "assistant",
-    content = content(response)$choices[[1]]$message$content
-      #content(response)$text
+    content = #content(response)$choices[[1]]$message$content
+      content(response)$text
   )
   
   messages[[length(messages) + 1]] <<- aiResponseFormatted

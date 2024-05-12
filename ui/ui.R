@@ -3,6 +3,7 @@ ui <- fluidPage(
   titlePanel("Audio Recorder and Transcriber"),
   tags$head(
     tags$style(HTML("
+   
       #record { 
         margin-top: 20px; 
         margin-bottom: 5px; 
@@ -75,6 +76,20 @@ ui <- fluidPage(
         margin-top: 10px;  /* Add some top margin */
         text-transform: uppercase;  /* Convert text to uppercase */
       }
+      
+       #suno_song_list-label {
+    color: black;
+       }
+       
+       #titleInput-label > span {
+       
+       color: black;
+       }
+    
+    #songName-label > span {
+    
+    color: black;
+    }
     "))
   ),
   tags$script(
@@ -101,16 +116,17 @@ ui <- fluidPage(
       actionButton("playSuno", "Play Song"),
       actionButton("stopSuno", "Stop Song"),
       fluidRow(
-        h5('A short title'),
+        #h5('A short title'),
         textAreaInput("titleInput", "", width = "100%", height = "50px",
                       label = HTML('<span class="control-label">A short title</span>')),
-        h5('song file name'),
+        #h5('song file name'),
         textAreaInput("songName", "", width = "100%", height = "50px",
                       label = HTML('<span class="control-label">Song file name</span>')),
         actionButton("generateSuno", "Generate Song")
       )
     ),
     mainPanel(
+      h6('Input Box'),
       div(class = "transcription-box", 
           textAreaInput("transcriptionTextarea", "", width = "100%", height = "150px")
       ),
@@ -121,8 +137,7 @@ ui <- fluidPage(
       div(class = "output-box", textOutput("AIOutput", container = span)),
       actionButton("speakOutput", "speakOutput"),
       br(),
-      h6('Image'),
-      h6('Image Prompt'),
+      h6('Image Generation'),
       selectizeInput(inputId = 'sdVersion',
                      label = 'SD versions',
                      choices = c('SD1','SD3'),
