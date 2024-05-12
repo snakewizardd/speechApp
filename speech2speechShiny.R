@@ -4,6 +4,7 @@ readRenviron(".env")
 
 importedAPIKey <- Sys.getenv("OPEN_AIKEY")
 groqKey <- Sys.getenv("GROQ_KEY")
+sdToken <- Sys.getenv("SDToken")
 
 
 source('./functions/functions.R',local=TRUE)
@@ -38,6 +39,7 @@ server <- function(input, output, session) {
   
   source('./server_modules/song_functionality.R',local=TRUE)
   
+  source('./server_modules/image_functionality.R',local=TRUE)
   
 }
 

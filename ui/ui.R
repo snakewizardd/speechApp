@@ -78,6 +78,12 @@ ui <- fluidPage(
       br(),
       div(class = "output-box", textOutput("AIOutput", container = span)),
       actionButton("speakOutput", "speakOutput"),
+      br(),
+      h6('Image'),
+      h6('Image Prompt'),
+      textAreaInput("imageName", "", width = "100%", height = "50px"),
+      actionButton("generateImage", "generateImage"),
+      imageOutput('imageArea')
       
     )
   )

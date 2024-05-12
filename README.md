@@ -1,3 +1,7 @@
+*Notes:
+
+- Added Stable Diffusion functionality
+
 **Project Overview**
 This is a web-based application built using R and Shiny, a web application framework for R. A demo video can be viewed here on [Youtube](https://youtu.be/YDIy_aMz95Q?si=7N8j8bigQgW187A1). It is a comprehensive audio processing and generation system that integrates various functionalities, including:
 

@@ -416,3 +416,60 @@ generateSong <- function(url = "http://localhost:3001/api/generate",
 #             tags = 'fun jovial chassidic traditionalButModern fun techno house trance',
 #             sunoSongName = songLocation)
 
+
+
+stableDiffusionImageSD3 <- function(url = "https://api.stability.ai/v2beta/stable-image/generate/sd3",
+                         prompt,
+                         output_format = 'jpeg',
+                         fileName){
+  
+  command <- paste0("curl -f -sS \"https://api.stability.ai/v2beta/stable-image/generate/sd3\" \
+  -H \"authorization: Bearer ",sdToken,"\" \
+  -H \"accept: image/*\" \
+  -F prompt=\"",prompt,"\" \
+  -F output_format=\"",output_format,"\" \
+  -o \"./",fileName,"\"")
+  
+  formattedCommand <- gsub('\n','',command)
+  
+  system(formattedCommand)
+  
+  
+}
+
+
+sxDL <- function(url = "https://api.stability.ai/v2beta/stable-image/generate/sd3",
+                 prompt,
+                 fileName){
+  
+  "https://api.stability.ai/v1/generation/stable-diffusion-v1-6/text-to-image"
+  
+  command <- paste0("curl -f -sS -X POST \"https://api.stability.ai/v1/generation/stable-diffusion-v1-6/text-to-image\" \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: image/png' \
+  -H \"Authorization: Bearer ",sdToken,"\" \
+  --data-raw '{
+    \"text_prompts\": [
+      {
+        \"text\": \",",prompt,"\"
+      }
+    ],
+    \"cfg_scale\": 7,
+    \"height\": 1024,
+    \"width\": 1024,
+    \"samples\": 1,
+    \"steps\": 30
+  }' \
+  -o \"",fileName,"\"")
+  
+  formattedCommand <- gsub('\n','',command)
+  
+  system(formattedCommand)
+  
+  
+}
+
+#stableDiffusionImage(prompt = 'a gorgeous scene for Motzei Shabbat',
+#                     fileName = 'mShabs.jpeg')
+
+#sxDL(prompt = 'a man chilling like a villain',fileName='chilling.jpeg')
