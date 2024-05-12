@@ -3,7 +3,7 @@
 - Added Stable Diffusion functionality
 
 **Project Overview**
-This is a web-based application built using R and Shiny, a web application framework for R. A demo video can be viewed here on [Youtube](https://youtu.be/YDIy_aMz95Q?si=7N8j8bigQgW187A1). It is a comprehensive audio processing and generation system that integrates various functionalities, including:
+This is a web-based application built using R and Shiny, a web application framework for R. A demo video can be viewed here on [Youtube](https://www.youtube.com/watch?v=X9X6RfpwubA). It is a comprehensive audio processing and generation system that integrates various functionalities, including:
 
 1. **Audio Recording and Transcription**: Users can record audio, and the application will transcribe the audio into text.
 2. **Chatbot/LLM Integration**: The transcribed text is sent to a Large Language Model (LLM) or chatbot, which generates a response.
