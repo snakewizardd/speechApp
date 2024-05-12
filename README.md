@@ -1,6 +1,7 @@
 *Notes:
 
-- Added Stable Diffusion functionality
+- Added Stable Diffusion 1 and 3 functionality
+- Integrated Gemini Vision feature with embedded API widget
 
 **Project Overview**
 This is a web-based application built using R and Shiny, a web application framework for R. A demo video can be viewed here on [Youtube](https://www.youtube.com/watch?v=X9X6RfpwubA). It is a comprehensive audio processing and generation system that integrates various functionalities, including:
@@ -20,6 +21,8 @@ The application consists of several modules:
 4. **Speech Synthesis**: Converts the chatbot's response into an audio file.
 5. **Music Generation**: Generates music based on user input using a music generation API.
 6. **Suno Song Generation**: Generates a song using the music generation API, with options to control instrumental, tags, and title.
+7. **Stable Diffusion 1 and 3**: Utilizes Stable Diffusion models for image generation and manipulation.
+8. **Gemini Vision**: Integrates an embedded API widget for computer vision capabilities.
 
 **UI Components**
 
@@ -31,3 +34,4 @@ The user interface includes:
 4. **Speech Synthesis**: Button to convert the chatbot's response into an audio file.
 5. **Suno Song Generation**: Inputs for title, song name, and options to generate a song.
 6. **Audio Player**: Allows users to play and stop audio files.
+7. **Gemini Vision Widget**: Embedded API widget for computer vision capabilities.
