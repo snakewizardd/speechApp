@@ -32,8 +32,13 @@ observeEvent(input$generateSuno,{
     
   incProgress(1/10, detail = paste("Processing Prompt with LLM..."))   
 
+  
+  string_clean <- gsub("[[:punct:]\\s]+", "", input$transcriptionTextarea)
+  
+  # Convert to lowercase
+  string_clean <- tolower(string_clean)
 
-  body <- list(question = input$transcriptionTextarea)
+  body <- list(question = string_clean)
   
   response <- POST(
     url = 'http://localhost:3000/api/v1/prediction/24f9ed69-dd85-4d3c-9a21-9f1c532af6b9',

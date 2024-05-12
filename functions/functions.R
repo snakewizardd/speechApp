@@ -54,7 +54,8 @@ pingAPI <- function(userInputMessage
   
   body <- list(
     #model = "gpt-3.5-turbo",
-    model = "llama3-70b-8192",
+    #model = "llama3-70b-8192",
+    model = "mixtral-8x7b-32768",
     #question = userInputMessage
       messages=messages
   )
@@ -366,7 +367,13 @@ generateSong <- function(url = "http://localhost:3001/api/generate",
   # body_json <- toJSON(post_body, auto_unbox = TRUE)
   
   # Create the API request body
-  body <- list(prompt = prompt, 
+  
+  string_clean <- gsub("[[:punct:]\\s]+", "", prompt)
+  
+  # Convert to lowercase
+  string_clean <- tolower(string_clean)
+  
+  body <- list(prompt = string_clean, 
                tags = tags,
                title = title,
                make_instrumental = make_instrumental, 
