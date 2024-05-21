@@ -28,9 +28,37 @@ observeEvent(input$generateImage,{
     
   })
   
+  image_files <- list.files(pattern = "*.jpeg$")
+  
+  
+  updateSelectizeInput(inputId = 'sd_image_list',
+                       choices = image_files,
+                       selected=image_files[length(image_files)])
+  
   
   
 })
 
 #sdXL(prompt = 'Stars twinkling over Jerusalem's Old City, moonlit streets, quietly joyful atmosphere',
 #fileName = 'jerusalem.jpeg')
+
+observe({
+  
+  image_files <- list.files(pattern = "*.jpeg$")
+  
+  updateSelectizeInput(inputId = 'sd_image_list',
+                       choices = image_files,
+                       selected=image_files[1])
+  
+})
+
+observeEvent(input$show_image, {
+  
+  output$imageArea <- renderImage({
+    
+    list(src = input$sd_image_list, contentType = "image/jpeg")
+    
+    
+  })
+  
+})

@@ -47,7 +47,7 @@ pingAPI <- function(userInputMessage
   
   #url <- "https://api.openai.com/v1/chat/completions"
   #url <- "https://api.groq.com/openai/v1/chat/completions"
-  url <- "http://localhost:3000/api/v1/prediction/fea20274-1672-4974-9f1b-c53fd839b9ab"
+  url <- "http://localhost:3000/api/v1/prediction/4f053a8a-9d10-49ff-ba24-6ccdfd797562"
   
   #apiKey <- importedAPIKey
   #apiKey <-  groqKey
@@ -545,4 +545,20 @@ interpretHebrewBot <- function(hebrewBotReponse){
   print(aiResponseFormatted$content)
   
   
+}
+
+sendToDiscord <- function(url = discordURL, InputMessage){
+
+      body <- list(
+        message = InputMessage  
+      )
+
+      response <- POST(
+        url,
+        add_headers(
+          `Content-Type`="application/json"),
+        body = body,
+        encode = "json"
+      )
+
 }

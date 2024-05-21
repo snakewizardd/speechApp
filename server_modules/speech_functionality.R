@@ -6,6 +6,7 @@ observeEvent(input$speakOutput,{
   system("rm -rf speechOutput.mp3")
   
   speak_text(text=aiOutputReactiveValue(),
+             voice="nova"
                 )
   
   #Sys.sleep(5)

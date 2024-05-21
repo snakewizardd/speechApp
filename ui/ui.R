@@ -136,6 +136,7 @@ ui <- fluidPage(
       br(),
       div(class = "output-box", textOutput("AIOutput", container = span)),
       actionButton("speakOutput", "speakOutput"),
+      actionButton("sendDiscord","sendDiscord"),
       br(),
       h6('Image Generation'),
       selectizeInput(inputId = 'sdVersion',
@@ -147,7 +148,12 @@ ui <- fluidPage(
                     label = HTML('<span class="control-label">Image Prompt</span>')),
       textAreaInput("imageName", "", width = "100%", height = "50px",
                     label = HTML('<span class="control-label">Image Name</span>')),
+      selectizeInput(inputId = 'sd_image_list',
+                     label = 'Local SD Image List',
+                     choices = NULL,
+                     multiple = F),
       actionButton("generateImage", "generateImage"),
+      actionButton("show_image", "Show Existing Image"),
       imageOutput('imageArea')
     )
   )
