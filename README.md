@@ -1,7 +1,23 @@
 *Notes:
+- Added Webhook to Discord server
+- Added drop down list for load of local images
+- Vision now powered by GPT 4o
 
+Current setup:
+
+- *LLM*: Localhost KoboldCPP 
+- *LLM Vision*: OpenAI GPT 4o
+- *Agentic Processing*: Flowise in Docker
+- *STT*: Whisper API Paid
+- *TTS*: OpenAI TTS Paid 
+- *SDXL*: SD API Paid
+- *SD3*: SD API Paid 
+
+
+
+___
 - Added Stable Diffusion 1 and 3 functionality
-- Integrated Gemini Vision feature with embedded API widget
+- Integrated <del>Gemini</del> Vision (flexible) feature with embedded API widget
 
 **Project Overview**
 This is a web-based application built using R and Shiny, a web application framework for R. A demo video can be viewed here on [Youtube](https://www.youtube.com/watch?v=X9X6RfpwubA). It is a comprehensive audio processing and generation system that integrates various functionalities, including:
