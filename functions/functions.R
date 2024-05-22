@@ -47,7 +47,7 @@ pingAPI <- function(userInputMessage
   
   #url <- "https://api.openai.com/v1/chat/completions"
   #url <- "https://api.groq.com/openai/v1/chat/completions"
-  url <- "http://localhost:3000/api/v1/prediction/4f053a8a-9d10-49ff-ba24-6ccdfd797562"
+  url <- "http://localhost:3000/api/v1/prediction/8a60ebac-e504-4f39-aced-1dd4372c3256"
   
   #apiKey <- importedAPIKey
   #apiKey <-  groqKey
@@ -220,7 +220,7 @@ speak_text3 <- function(text,
   
   system("rm -rf output.aiff")
   
-  text <- formatString(text)
+  #text <- formatString(text)
   
   sayCommand <- paste0('say -o output.aiff "', text, '" -v ', voice)
   

@@ -11,3 +11,6 @@ CH2URL="http://localhost:3000/api/v1/prediction/418e3f2f-df5c-4e3b-a3fc-87a124ce
 FirstPrompt="Today we will be having a comprehensive discussion about: "
 FirstPromptSpecific = "Why donuts are not well appreciated in the USA"
 StringFormatURL="http://localhost:3000/api/v1/prediction/[CUSTOM_ROUTE_FOR_FLOWISE_ENDPOINT]"
+CharacterCreatorEndpoint="http://localhost:3000/api/v1/prediction/[CUSTOM_ROUTE_FOR_FLOWISE_ENDPOINT]"
+SDToken="sk-YOUR_SD_API_TOKEN"
+DISCORDURL="your preconfigured webhook URL"
