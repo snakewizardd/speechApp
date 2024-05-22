@@ -8,6 +8,7 @@ observeEvent(input$sendTranscription,{
   addUserMessage(userMessage =userInput)
   
   storeAPI <- pingAPI(userInputMessage = userInput)
+  #Uncomment for Hebrew Bot
   #storeAPI <- interpretHebrewBot(hebrewBotReponse =
   #                                 pingHebrewBot(userInputMessage = userInput))
   
